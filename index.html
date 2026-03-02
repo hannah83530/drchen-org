@@ -79,7 +79,7 @@ body {
 /* ===== Hero ===== */
 .hero {
   background: #eae6df;
-  padding: 90px 24px 80px; /* 原本 120，改小一點避免上方太空 */
+  padding: 90px 24px 80px;
 }
 
 .hero-inner {
@@ -127,6 +127,18 @@ body {
   margin-bottom: 32px;
 }
 
+/* ===== View-all link (Wix-like) ===== */
+.viewall {
+  display: inline-block;
+  margin: -6px 0 28px;
+  color: #4a2a16;
+  text-decoration: none;
+  font-size: 14px;
+  border-bottom: 1px solid rgba(74,42,22,0.30);
+  padding-bottom: 2px;
+}
+.viewall:hover { opacity: 0.75; }
+
 /* ===== Projects ===== */
 .cards {
   display: grid;
@@ -134,11 +146,27 @@ body {
   gap: 24px;
 }
 
+/* 讓整張卡片可點：用 <a class="card-link"> 包住 */
+.card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 10px;
+  outline: none;
+}
+
 .card {
   background: white;
   padding: 24px;
   border-radius: 10px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.card-link:hover .card,
+.card-link:focus .card {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.08);
 }
 
 .card h4 {
@@ -251,22 +279,29 @@ body {
 <!-- PROJECTS -->
 <section class="container" id="projects">
   <h2 class="section-title">Selected Projects</h2>
+  <p><a class="viewall" href="projects.html">View all projects →</a></p>
 
   <div class="cards">
-    <div class="card">
-      <h4>Circular Materials Development</h4>
-      <p>循環材料開發與資源再生</p>
-    </div>
+    <a class="card-link" href="projects.html" aria-label="View projects: Circular Materials Development">
+      <div class="card">
+        <h4>Circular Materials Development</h4>
+        <p>循環材料開發與資源再生</p>
+      </div>
+    </a>
 
-    <div class="card">
-      <h4>AI-Driven Recycling Systems</h4>
-      <p>AI智慧回收系統</p>
-    </div>
+    <a class="card-link" href="projects.html" aria-label="View projects: AI-Driven Recycling Systems">
+      <div class="card">
+        <h4>AI-Driven Recycling Systems</h4>
+        <p>AI智慧回收系統</p>
+      </div>
+    </a>
 
-    <div class="card">
-      <h4>Carbon Monitoring Technologies</h4>
-      <p>碳監測與MRV技術</p>
-    </div>
+    <a class="card-link" href="projects.html" aria-label="View projects: Carbon Monitoring Technologies">
+      <div class="card">
+        <h4>Carbon Monitoring Technologies</h4>
+        <p>碳監測與MRV技術</p>
+      </div>
+    </a>
   </div>
 </section>
 
