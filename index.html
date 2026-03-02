@@ -44,7 +44,7 @@ body {
 }
 
 /* Anchor offset */
-#home, #selected-projects, #selected-photos, #contact {
+#home, #selected-publications, #selected-projects, #selected-photos, #contact {
   scroll-margin-top: 84px;
 }
 
@@ -254,6 +254,42 @@ body {
   margin-bottom: 22px;
 }
 
+/* ===== Selected Sections: View all (ONLY what you requested) ===== */
+.sectionHead{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.sectionHead .section-title{
+  margin-bottom: 22px; /* keep your original spacing */
+}
+
+.viewAllBtn{
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--brand);
+  text-decoration: none;
+  opacity: 0.95;
+}
+
+.viewAllBtn:hover{
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+/* Selected Publications list */
+.pubList{
+  margin: 0;
+  padding-left: 22px;
+}
+
+.pubList li{
+  margin-bottom: 14px;
+}
+
 /* ===== Projects ===== */
 .cards {
   display: grid;
@@ -425,8 +461,28 @@ body {
   </div>
 </section>
 
+<!-- NEW: Selected Publications (placed above Selected Projects) -->
+<section class="container" id="selected-publications">
+  <div class="sectionHead">
+    <h2 class="section-title">Selected Publications</h2>
+    <a class="viewAllBtn" href="publications.html">View all</a>
+  </div>
+
+  <ol class="pubList">
+    <li>Kuo, C. Y., Chen, T. Y., &amp; Chen, P. H. (2026). Development and Field Application of an Integrated Three-Phase Greenhouse Gas Monitoring System in Smart Shrimp Aquaculture with Biofloc-Based Carbon Mitigation. Aquacultural Engineering, 102699.</li>
+    <li>Tseng, H. K., Su, J. A., Chen, I. M., Chen, Y. Z., Wu, J. Y., Chen, P. H., &amp; Liu, F. W. (2026). Closed-loop recycling and recovery of vanadium cathodes from waste aqueous zinc-ion batteries. Chemical Engineering Journal, 172590.</li>
+    <li>Wu, J. Y. Chen, P. H. &amp; Liu, F.-W. (2025). Development of a Circular Economy Framework for Coffee Ground Recycling from Pyrolysis-Based Activated Carbon to Service Platform Integration, Sensors and Materials.</li>
+    <li>Wu, J. Y. &amp; Chen, P. H. (2025). Novel Approach to Mixed Waste Label Recycling by Automation Density Sorting, Sensors and Materials</li>
+    <li>Chen, P. H., &amp; Wu, J. Y. (2025). Circular Economy Approach for Utilizing Organic Waste in Cat Litter and Compost to Support Plant Growth. Waste, 3(1), 8.</li>
+  </ol>
+</section>
+
 <section class="container" id="selected-projects">
-  <h2 class="section-title">Selected Projects</h2>
+  <div class="sectionHead">
+    <h2 class="section-title">Selected Projects</h2>
+    <a class="viewAllBtn" href="projects.html">View all</a>
+  </div>
+
   <div class="cards">
     <a class="card-link" href="projects.html">
       <div class="card">
@@ -450,7 +506,11 @@ body {
 </section>
 
 <section class="container" id="selected-photos">
-  <h2 class="section-title">Selected Photos</h2>
+  <div class="sectionHead">
+    <h2 class="section-title">Selected Photos</h2>
+    <a class="viewAllBtn" href="activities.html">View all</a>
+  </div>
+
   <div class="photoGrid">
     <img src="assets/activities/photo01.jpg" alt="">
     <img src="assets/activities/photo02.jpg" alt="">
