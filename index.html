@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dr. Pin-Han Chen</title>
+
+<style>
+/* ===== Base ===== */
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: #2b2b2b;
+  background: #f7f5f2;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 24px;
+}
+
+/* ===== Hero ===== */
+.hero {
+  background: #eae6df;
+  padding: 120px 24px 80px;
+}
+
+.hero-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.hero img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin: 0 0 12px;
+  font-weight: 400;
+}
+
+.hero h2 {
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0 0 24px;
+  opacity: 0.75;
+}
+
+.hero p.tagline {
+  font-size: 22px;
+  margin: 0 0 8px;
+}
+
+.hero p.subtag {
+  font-size: 16px;
+  opacity: 0.75;
+}
+
+/* ===== Section titles ===== */
+.section-title {
+  font-size: 42px;
+  font-weight: 300;
+  margin-bottom: 32px;
+}
+
+/* ===== Projects ===== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+  gap: 24px;
+}
+
+.card {
+  background: white;
+  padding: 24px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.card h4 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.card p {
+  margin: 0;
+  font-size: 14px;
+  opacity: 0.75;
+}
+
+/* ===== Contact (Wix-like) ===== */
+.contact {
+  background: #4a2a16;
+  color: #f4efe9;
+}
+
+.contact-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+
+.contact h3 {
+  font-size: 48px;
+  font-weight: 300;
+  margin-top: 0;
+}
+
+.contact a {
+  color: #f4efe9;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(244,239,233,0.6);
+  padding: 10px 2px;
+  color: white;
+}
+
+.btn {
+  width: 100%;
+  background: transparent;
+  border: 1px solid rgba(244,239,233,0.8);
+  color: white;
+  padding: 14px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 900px) {
+  .hero-inner,
+  .contact-inner {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <img src="https://via.placeholder.com/400x500" alt="Dr. Pin-Han Chen">
+
+    <div>
+      <h1>Dr. Pin-Han Chen</h1>
+      <h2>Assistant Professor, Providence University</h2>
+
+      <p class="tagline">Circular Economy & Resource Recovery</p>
+      <p class="subtag">
+        AI-Enabled Sustainable Materials and Carbon Management Systems
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="container">
+  <h2 class="section-title">About</h2>
+
+  <p><strong>EN</strong><br>
+  Dr. Pin-Han Chen’s research focuses on circular economy strategies,
+  AI-enabled recycling systems, and carbon management technologies.</p>
+
+  <p><strong>ZH</strong><br>
+  陳品涵博士之研究聚焦於循環經濟、智慧回收系統與碳管理技術之整合與應用。</p>
+</section>
+
+<!-- PROJECTS -->
+<section class="container">
+  <h2 class="section-title">Selected Projects</h2>
+
+  <div class="cards">
+    <div class="card">
+      <h4>Circular Materials Development</h4>
+      <p>循環材料開發與資源再生</p>
+    </div>
+
+    <div class="card">
+      <h4>AI-Driven Recycling Systems</h4>
+      <p>AI智慧回收系統</p>
+    </div>
+
+    <div class="card">
+      <h4>Carbon Monitoring Technologies</h4>
+      <p>碳監測與MRV技術</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact">
+  <div class="container contact-inner">
+
+    <div>
+      <h3>Contact<br>Information</h3>
+
+      <p>
+        Sustainable Environment and Smart Technology,<br>
+        Providence University.<br><br>
+
+        No. 200, Sec. 7, Taiwan Boulevard,<br>
+        Shalu Dist., Taichung City 43301 Taiwan.<br><br>
+
+        <a href="mailto:hannah530@pu.edu.tw">hannah530@pu.edu.tw</a>
+      </p>
+    </div>
+
+    <div>
+      <form action="https://formspree.io/f/xpqjegyr" method="POST">
+        <div class="field">
+          <input name="first_name" placeholder="First name *" required>
+        </div>
+        <div class="field">
+          <input name="last_name" placeholder="Last name *" required>
+        </div>
+        <div class="field">
+          <input name="email" type="email" placeholder="Email *" required>
+        </div>
+        <div class="field">
+          <textarea name="message" rows="5" placeholder="Message"></textarea>
+        </div>
+
+        <button class="btn" type="submit">Submit</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>
