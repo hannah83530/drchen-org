@@ -5,14 +5,30 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Dr. Pin-Han Chen</title>
 
+<!-- Two-font setup (headings vs body) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 <style>
 html { scroll-behavior: smooth; }
 
+:root{
+  --bg: #f7f5f2;
+  --ink: #2b2b2b;
+  --brand: #4a2a16;
+  --paper: #ffffff;
+
+  /* Fonts */
+  --font-body: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+}
+
 body {
   margin: 0;
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  color: #2b2b2b;
-  background: #f7f5f2;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--bg);
   line-height: 1.6;
 }
 
@@ -32,7 +48,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 999;
-  background: #4a2a16;
+  background: var(--brand);
   color: #f4efe9;
   height: 64px;
   display: flex;
@@ -54,6 +70,7 @@ body {
   text-decoration: none;
   font-size: 18px;
   font-weight: 600;
+  letter-spacing: 0.2px;
 }
 
 .navToggle {
@@ -113,80 +130,160 @@ body {
 
 .dropdown.open .dropdownMenu { display: block; }
 
-/* ===== HERO ===== */
+/* ===== HERO (with background image like Wix) ===== */
 .hero {
-  background: #eae6df;
-  padding: 90px 24px 80px;
+  position: relative;
+  padding: 88px 24px 72px;
+  overflow: hidden;
+
+  /* IMPORTANT: put your image here */
+  background-image:
+    radial-gradient(1200px 500px at 75% 40%, rgba(0,0,0,0.05), rgba(0,0,0,0.35)),
+    linear-gradient(to right, rgba(247,245,242,0.95) 0 43%, rgba(247,245,242,0.70) 45%, rgba(0,0,0,0.0) 70%),
+    url("hero-bg.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .hero-inner {
   max-width: 1100px;
   margin: 0 auto;
+
   display: grid;
-  grid-template-columns: 320px 1fr;
-  gap: 48px;
+  grid-template-columns: 360px 1fr;
+  gap: 56px;
   align-items: center;
+}
+
+/* Portrait card like Wix (white block + shadow) */
+.portraitCard{
+  background: var(--paper);
+  border-radius: 0px;
+  padding: 18px;
+  box-shadow: 0 18px 45px rgba(0,0,0,0.16);
 }
 
 .hero img {
   width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  display: block;
+  border-radius: 0px;
 }
 
+/* Typography: Display font for headings */
 .hero h1 {
-  font-size: 48px;
-  margin: 0 0 12px;
-  font-weight: 400;
+  font-family: var(--font-display);
+  font-size: 56px;
+  line-height: 1.05;
+  margin: 0 0 10px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  color: #ffffff;                 /* text over bg image */
+  text-shadow: 0 10px 30px rgba(0,0,0,0.35);
 }
 
 .hero h2 {
+  font-family: var(--font-body);
   font-size: 18px;
   font-weight: 400;
-  margin: 0 0 24px;
-  opacity: 0.75;
+  margin: 0 0 22px;
+  opacity: 0.92;
+  color: #ffffff;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.28);
 }
 
 .hero p.tagline {
+  font-family: var(--font-body);
   font-size: 22px;
   margin: 0 0 8px;
+  color: #ffffff;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.28);
 }
 
 .hero p.subtag {
+  font-family: var(--font-body);
   font-size: 16px;
-  opacity: 0.75;
+  margin: 0 0 18px;
+  opacity: 0.90;
+  color: #ffffff;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.25);
 }
 
-/* ===== Section titles ===== */
+/* Add a short about paragraph in hero (like Wix sample) */
+.hero .intro {
+  max-width: 560px;
+  color: rgba(255,255,255,0.92);
+  margin: 0 0 18px;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.22);
+}
+
+.heroActions{
+  margin-top: 10px;
+}
+
+.btnHero {
+  display: inline-block;
+  padding: 12px 18px;
+  border: 1px solid rgba(255,255,255,0.85);
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: 0.2px;
+  background: rgba(0,0,0,0.12);
+  backdrop-filter: blur(4px);
+}
+
+.btnHero:hover{
+  background: rgba(0,0,0,0.20);
+}
+
+/* ===== Section titles (display font) ===== */
 .section-title {
-  font-size: 42px;
-  font-weight: 300;
-  margin-bottom: 24px;
+  font-family: var(--font-display);
+  font-size: 44px;
+  font-weight: 600;
+  margin-bottom: 22px;
 }
 
-/* ===== About Grid ===== */
-.aboutGrid {
+/* ===== ABOUT: match Wix alignment (left column reserved, content on right) ===== */
+.aboutRow{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 70px 24px;
   display: grid;
-  grid-template-columns: 1fr 300px;
-  gap: 28px;
+  grid-template-columns: 360px 1fr; /* align with hero */
+  gap: 56px;
+  align-items: start;
 }
 
+.aboutSpacer{
+  /* intentionally empty to mimic Wix layout where photo column continues */
+}
+
+.aboutContent{
+  background: transparent;
+}
+
+.aboutContent p{
+  max-width: 680px;
+}
+
+/* keep your “About Me” card but move it to the right column and make it Wix-like */
 .sideCard {
+  margin-top: 22px;
   background: white;
-  border-radius: 12px;
-  padding: 18px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  border-radius: 0px;
+  padding: 18px 20px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+  max-width: 360px;
 }
 
-.sideCard h4 { margin: 0 0 10px; }
+.sideCard h4 { margin: 0 0 10px; font-family: var(--font-body); }
 
 .btnMini {
   display: inline-block;
   margin-top: 12px;
   padding: 10px 16px;
-  border: 1px solid #4a2a16;
-  border-radius: 999px;
-  color: #4a2a16;
+  border: 1px solid var(--brand);
+  color: var(--brand);
   text-decoration: none;
 }
 
@@ -227,7 +324,7 @@ body {
 
 /* ===== Contact ===== */
 .contact {
-  background: #4a2a16;
+  background: var(--brand);
   color: #f4efe9;
 }
 
@@ -238,8 +335,10 @@ body {
 }
 
 .contact h3 {
-  font-size: 48px;
-  font-weight: 300;
+  font-family: var(--font-display);
+  font-size: 52px;
+  font-weight: 600;
+  margin: 0 0 18px;
 }
 
 .field input,
@@ -266,9 +365,18 @@ body {
 @media (max-width: 900px) {
   .hero-inner,
   .contact-inner,
-  .aboutGrid {
+  .aboutRow {
     grid-template-columns: 1fr;
   }
+
+  .hero{
+    padding: 72px 18px 60px;
+    background-image:
+      radial-gradient(1200px 500px at 60% 20%, rgba(0,0,0,0.10), rgba(0,0,0,0.45)),
+      url("assets/hero-bg.jpg");
+  }
+
+  .hero h1{ font-size: 42px; }
 
   .photoGrid { grid-template-columns: repeat(2,1fr); }
 
@@ -278,7 +386,7 @@ body {
     position: absolute;
     left: 0; right: 0;
     top: 64px;
-    background: #4a2a16;
+    background: var(--brand);
     flex-direction: column;
     padding: 16px 24px;
     display: none;
@@ -317,35 +425,51 @@ body {
 
 <section class="hero" id="home">
   <div class="hero-inner">
-    <img src="個人照.jpg" alt="Dr. Pin-Han Chen">
+    <div class="portraitCard">
+      <img src="個人照.jpg" alt="Dr. Pin-Han Chen">
+    </div>
+
     <div>
       <h1>Dr. Pin-Han Chen</h1>
       <h2>Assistant Professor, Providence University</h2>
       <p class="tagline">Circular Economy & Resource Recovery</p>
       <p class="subtag">AI-Enabled Sustainable Materials and Carbon Management Systems</p>
+
+      <!-- short intro like Wix example -->
+      <p class="intro">
+        I work at the intersection of circular economy, environmental systems, and process-oriented approaches to resource recovery,
+        with a focus on waste valorization, AI-assisted decision systems, and low-carbon process optimization.
+      </p>
+
+      <div class="heroActions">
+        <a class="btnHero" href="#about">About Me</a>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="container" id="about">
-  <h2 class="section-title">About</h2>
+<!-- ABOUT: aligned to hero columns (Wix-like) -->
+<section id="about">
+  <div class="aboutRow">
+    <div class="aboutSpacer"></div>
 
-  <div class="aboutGrid">
-    <div>
+    <div class="aboutContent">
+      <h2 class="section-title">About</h2>
+
       <p><strong>EN</strong><br>
       Dr. Pin Han Chen is a researcher based in Taiwan working at the intersection of circular economy, environmental systems, and process-oriented approaches to resource recovery. Her work focuses on waste valorization, integrating conventional metallurgical methods with emerging tools such as AI-assisted decision systems, low-carbon process optimization, microbial metallurgy, and data-driven environmental assessment.</p>
-      
+
       <p>Her research addresses practical waste challenges from a systems perspective and explores alternative pathways when existing technologies are difficult to scale. She also works on carbon reduction strategies, with particular attention to low-carbon process design for agricultural and industrial systems. Her broader goal is to connect circular economy thinking with carbon management and to contribute research that supports real change and wider adoption of sustainable practices in industry.</p>
-      
+
       <p><strong>ZH</strong><br>
       陳品涵博士之研究聚焦於循環經濟、智慧回收系統與碳管理技術之整合與應用。</p>
-    </div>
 
-    <aside class="sideCard">
-      <h4>About Me</h4>
-      <p>Education, positions, awards and service.</p>
-      <a class="btnMini" href="about.html">Open full profile</a>
-    </aside>
+      <aside class="sideCard">
+        <h4>About Me</h4>
+        <p>Education, positions, awards and service.</p>
+        <a class="btnMini" href="about.html">Open full profile</a>
+      </aside>
+    </div>
   </div>
 </section>
 
@@ -376,10 +500,10 @@ body {
 <section class="container" id="selected-photos">
   <h2 class="section-title">Selected Photos</h2>
   <div class="photoGrid">
-    <img src="assets/activities/photo01.jpg">
-    <img src="assets/activities/photo02.jpg">
-    <img src="assets/activities/photo03.jpg">
-    <img src="assets/activities/photo04.jpg">
+    <img src="assets/activities/photo01.jpg" alt="">
+    <img src="assets/activities/photo02.jpg" alt="">
+    <img src="assets/activities/photo03.jpg" alt="">
+    <img src="assets/activities/photo04.jpg" alt="">
   </div>
 </section>
 
@@ -390,7 +514,7 @@ body {
       <p>
         Sustainable Environment and Smart Technology,<br>
         Providence University.<br><br>
-        <a href="mailto:hannah530@pu.edu.tw">hannah530@pu.edu.tw</a>
+        <a href="mailto:hannah530@pu.edu.tw" style="color:#f4efe9;">hannah530@pu.edu.tw</a>
       </p>
     </div>
     <div>
