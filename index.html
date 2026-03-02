@@ -7,6 +7,8 @@
 
 <style>
 /* ===== Base ===== */
+html { scroll-behavior: smooth; }
+
 body {
   margin: 0;
   font-family: "Helvetica Neue", Arial, sans-serif;
@@ -21,10 +23,63 @@ body {
   padding: 80px 24px;
 }
 
+/* 為了讓錨點跳轉不被上方導覽列蓋住 */
+#about, #projects, #contact { scroll-margin-top: 84px; }
+
+/* ===== Top Nav (Wix-like) ===== */
+.topnav {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: #4a2a16;
+  color: #f4efe9;
+  height: 64px;
+  display: flex;
+  align-items: center;
+}
+
+.topnav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  font-size: 18px;
+  letter-spacing: 0.2px;
+  opacity: 0.95;
+}
+
+.navlinks {
+  display: flex;
+  gap: 28px;
+  font-size: 14px;
+}
+
+.navlinks a {
+  color: #f4efe9;
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.navlinks a:hover {
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+@media (max-width: 900px) {
+  .navlinks { gap: 16px; font-size: 13px; }
+}
+
 /* ===== Hero ===== */
 .hero {
   background: #eae6df;
-  padding: 120px 24px 80px;
+  padding: 90px 24px 80px; /* 原本 120，改小一點避免上方太空 */
 }
 
 .hero-inner {
@@ -151,6 +206,19 @@ body {
 
 <body>
 
+<!-- TOP NAV -->
+<header class="topnav">
+  <div class="topnav-inner">
+    <div class="brand">Dr. Pin-Han Chen</div>
+    <nav class="navlinks">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="publications.html">Publications</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
@@ -169,7 +237,7 @@ body {
 </section>
 
 <!-- ABOUT -->
-<section class="container">
+<section class="container" id="about">
   <h2 class="section-title">About</h2>
 
   <p><strong>EN</strong><br>
@@ -181,7 +249,7 @@ body {
 </section>
 
 <!-- PROJECTS -->
-<section class="container">
+<section class="container" id="projects">
   <h2 class="section-title">Selected Projects</h2>
 
   <div class="cards">
@@ -203,7 +271,7 @@ body {
 </section>
 
 <!-- CONTACT -->
-<section class="contact">
+<section class="contact" id="contact">
   <div class="container contact-inner">
 
     <div>
